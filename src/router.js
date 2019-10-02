@@ -19,10 +19,10 @@ export default new Router({
   routes: [
     {
      path: '/',
-    //name: 'Inicio',
-    //component: Inicio
-    name: 'SolucionesV',
-      component: Soluciones
+    name: 'Inicio',
+    component: Inicio
+    //name: 'SolucionesV',
+      //component: Soluciones
     },
     {
       path: '/camadas',
@@ -46,11 +46,11 @@ export default new Router({
       path: '/VistaBotonesCalculadora',
       name: 'VistaBotonesCalculadora',
       component: VistaBotonesCalculadora
-    }//,{
-      //path: '/Soluciones',
-      //name: 'SolucionesV',
-      //component: Soluciones
-    //},
+    },{
+      path: '/Soluciones',
+      name: 'SolucionesV',
+      component: Soluciones
+    },
   ]
 
 

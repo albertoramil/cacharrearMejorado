@@ -86,11 +86,4 @@ export default new Router({
 
 })
 
-// Guardias!!
-function guard(to, from, next){
-  if(store.state.auth.loggedIn) {
-    next() // allow to enter route
-  } else{
-    next('/'); // go to 'login';
-  }
-}
+

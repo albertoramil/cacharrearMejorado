@@ -3,6 +3,10 @@
 <template>
   <v-content>
 
+
+<cabecera>
+</cabecera>
+
 <SolucionesC>
 </SolucionesC>
 
@@ -15,6 +19,7 @@
 
 <script>
   import SolucionesC from '../components/SolucionesC.vue'
+  import cabecera from '../components/cabecera-navegacion.vue'
 
 
   export default {
@@ -23,7 +28,7 @@
       
     }),
     components: {
-      SolucionesC
+      SolucionesC,cabecera
     }
   }
 </script>

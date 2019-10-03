@@ -1,7 +1,8 @@
 <template >
   <div>
     {{info}}
-      <button> </button>
+    <v-btn outlined large fab v-on:click="consulta"></v-btn>
+    {{users}}
 
   </div>
 </template>
@@ -21,6 +22,7 @@ export default {
   },
   methods: {
     consulta: function () {
+      console.log("sdfsdfs")
       const baseURI = 'https://jsonplaceholder.typicode.com/users'
       this.$http.get(baseURI)
       .then((result) => {

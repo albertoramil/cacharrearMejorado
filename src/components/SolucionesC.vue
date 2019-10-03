@@ -1,8 +1,12 @@
 <template >
   <div>
-    {{info}}
     <v-btn outlined large fab v-on:click="consulta"></v-btn>
-    {{users}}
+      {{users}}
+      <br>      <br>
+      <br>
+    <v-btn outlined large fab v-on:click="aconsulta"></v-btn>
+
+            {{ausers}}
 
   </div>
 </template>
@@ -12,22 +16,34 @@ export default {
   name: 'app',
   data () {
     return {
-      users: [],
-      info:null
+      users:null,
+      ausers:null
+
     }
-  },mounted () {
-    this.$axios
-      .get('https://api.coindesk.com/v1/bpi/currentprice.json')
-      .then(response => (this.info = response))
   },
   methods: {
     consulta: function () {
       console.log("sdfsdfs")
       const baseURI = 'https://jsonplaceholder.typicode.com/users'
-      this.$http.get(baseURI)
+        this.$http.get(baseURI)
       .then((result) => {
         this.users = result.data
       })
+    }, 
+        async aconsulta() {
+      try {
+              const baseURI = 'https://jsonplaceholder.typicode.com/posts6'
+              let respuesta=await this.$axios.get(baseURI)
+              this.ausers=respuesta
+        
+      } catch (error) {
+        console.log("error")
+        console.log(error)
+        console.log("error")
+
+        
+      }
+      
     }
   }
 }

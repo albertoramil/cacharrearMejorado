@@ -11,6 +11,7 @@ import Calculadora from './views/Calculadora.vue'
 import VistaBotonesCalculadora from './views/VistaBotonesCalculadora.vue'
 import Soluciones from './views/SolucionesV.vue'
 
+import DataTableV from './views/DataTableV.vue'
 
 
 Vue.use(Router)
@@ -50,6 +51,10 @@ export default new Router({
       path: '/Soluciones',
       name: 'SolucionesV',
       component: Soluciones
+    },{
+      path: '/DataTableV',
+      name: 'DataTableV',
+      component: DataTableV
     },
   ]
 

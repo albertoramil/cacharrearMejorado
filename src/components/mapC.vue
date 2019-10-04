@@ -15,7 +15,7 @@
     <gmap-map
       :center="center"
       :zoom="12"
-      style="width:100%;  height: 400px;"
+      style="width:100%;  height: 700px;"
     >
       <gmap-marker
         :key="index"
@@ -43,6 +43,7 @@ export default {
 
   mounted() {
     this.geolocate();
+    //seejecuta solo al inicio
   },
 
   methods: {
@@ -51,16 +52,20 @@ export default {
       this.currentPlace = place;
     },
     addMarker() {
-      if (this.currentPlace) {
-        const marker = {
-          lat: this.currentPlace.geometry.location.lat(),
-          lng: this.currentPlace.geometry.location.lng()
-        };
-        this.markers.push({ position: marker });
-        this.places.push(this.currentPlace);
-        this.center = marker;
-        this.currentPlace = null;
-      }
+        var milatitud=0
+        var milongitud=0
+        navigator.geolocation.getCurrentPosition(position => {
+            milatitud=position.coords.latitude
+            milongitud=position.coords.longitude
+            const marker = {
+                lat: milatitud,
+                lng: milongitud
+            };
+            this.markers.push({ position: marker });
+            this.places.push(this.currentPlace);
+            this.center = marker;
+            this.currentPlace = null;
+        });     
     },
     geolocate: function() {
       navigator.geolocation.getCurrentPosition(position => {

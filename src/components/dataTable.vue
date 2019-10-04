@@ -1,18 +1,34 @@
-<template >
-  <div>
-    
-      <template>
-        <v-data-table
-          :headers="cabecera2"
-          :items="info"
-          :items-per-page="5"
-          class="elevation-1"
-        ></v-data-table>
-      </template>
+<template>
+<div>
+ <v-btn outlined large fab v-on:click="aconsulta">
+
+cargar  </v-btn>
+
+ 
+
+  <v-card>
+    <v-card-title>
+      Albunes
+      <div class="flex-grow-1"></div>
+      <v-text-field
+        v-model="search"
+        label="Buscar"
+      ></v-text-field>
+    </v-card-title>
+    <v-data-table
+      :headers="cabecera2"
+      :items="ausers"
+      :search="search"
+    ></v-data-table>
+  </v-card>
 
 
-  </div>
+
+</div>
 </template>
+
+
+
 
 <script>
 export default {
@@ -20,17 +36,18 @@ export default {
   data () {
     return {
       ausers:[],
-      info:[],albumid:'',    
+      info:[],
+      search:'',
       cabecera2: [
-          {
+        {
             text: 'Caralladas',
             align: 'left',
             sortable: false,
-            value: 'name',
-          },
-          { text: 'Título', value: 'title' },
-          { text: 'url', value: 'url' },
-                    { text: 'album', value: 'albumId' },
+            value: 'title',
+        },
+        { text: 'Título', value: 'title' },
+        { text: 'url', value: 'url' },
+        { text: 'album', value: 'albumId' },
 
         ]
     }
@@ -49,7 +66,7 @@ export default {
       try {
         const baseURI = 'https://jsonplaceholder.typicode.com/photos'
         let respuesta=await this.$axios.get(baseURI)
-        this.ausers=respuesta
+        this.ausers=respuesta.data
       } catch (error) {
         console.log("error")
         console.log(error)

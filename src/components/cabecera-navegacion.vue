@@ -40,7 +40,7 @@
     data: () => ({
       currentItem: 'tab-Web',
       items: [
-        'Presentacion', 'Camadas', 'Otras', 'Futuras','Calculadora','VistaBotonesCalculadora','PEÑA', 'DataTableV', ]
+        'Presentacion', 'Camadas', 'Otras', 'Futuras','Calculadora','VistaBotonesCalculadora','PEÑA', 'DataTableV','mapV', ]
        }),
     methods: {
       addItem (item){
@@ -79,6 +79,10 @@
           break;
           case "DataTableV":
             this.$router.push("/DataTableV")
+          break;
+
+          case "mapV":
+            this.$router.push("/mapV")
           break;
         
         default:

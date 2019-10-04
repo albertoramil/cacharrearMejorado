@@ -12,6 +12,7 @@ import VistaBotonesCalculadora from './views/VistaBotonesCalculadora.vue'
 import Soluciones from './views/SolucionesV.vue'
 
 import DataTableV from './views/DataTableV.vue'
+import mapV from './views/mapV.vue'
 
 
 Vue.use(Router)
@@ -55,6 +56,10 @@ export default new Router({
       path: '/DataTableV',
       name: 'DataTableV',
       component: DataTableV
+    },{
+      path: '/mapV',
+      name: 'mapV',
+      component: mapV
     },
   ]
 

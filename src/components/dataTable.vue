@@ -1,10 +1,12 @@
 <template>
-<div>
- <v-btn outlined large fab v-on:click="aconsulta">
-
-cargar  </v-btn>
-
- 
+    <div>
+         <v-btn
+          color="indigo"
+          class="white--text"
+          @click="aconsulta"
+        >
+          Carga
+        </v-btn>
 
   <v-card>
     <v-card-title>

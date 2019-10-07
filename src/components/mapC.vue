@@ -3,10 +3,8 @@
     <div>
       <h2>Search and add a pin</h2>
       <label>
-        <gmap-autocomplete
-          @place_changed="setPlace">
-        </gmap-autocomplete>
-        <button @click="addMarker">Add</button>
+        
+        <button @click="addMarker">Añadir marker</button>
       </label>
       <br/>
 
@@ -64,7 +62,7 @@ export default {
             this.markers.push({ position: marker });
             this.places.push(this.currentPlace);
             this.center = marker;
-            this.currentPlace = null;
+            this.currentPlace = null; 
         });     
     },
     geolocate: function() {
